@@ -1,13 +1,12 @@
-from .request import Request
+
 
 
 class Basicpoolstatistics:
     """Class that represents the basic pool Statistics in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a Basicpoolstatistics object."""
         self.raw_data = raw_data
-        self.auth = auth
 
 
     @property
@@ -36,21 +35,13 @@ class Basicpoolstatistics:
         return self.data["price"]
 
 
-    async def async_update(self):
-        """Update the poolStats data."""
-        resp = await self.auth.get_data("poolStats")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
 
 class Minedblockshistory:
     """Class that represents the mined Blocks history in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a minedblockshistory object."""
         self.raw_data = raw_data
-        self.auth = auth
 
 
     @property
@@ -64,21 +55,13 @@ class Minedblockshistory:
         return self.data["minedBlocks"]
 
 
-    async def async_update(self):
-        """Update the mined blocks stats data."""
-        resp = await self.auth.get_data("blocks/history")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
 
 class Networkstatistics:
     """Class that represents the Network Statistics of the pool in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a Networkstatistics object."""
         self.raw_data = raw_data
-        self.auth = auth
 
 
     @property
@@ -117,21 +100,13 @@ class Networkstatistics:
         return self.data["btc"]
 
 
-    async def async_update(self):
-        """Update the network Statistics data."""
-        resp = await self.auth.get_data("networkStats")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
 
 class Serverhashratehistory:
     """Class that represents the Server Hashrate history in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a Serverhashratestatistics object."""
         self.raw_data = raw_data
-        self.auth = auth
 
 
     @property
@@ -140,21 +115,13 @@ class Serverhashratehistory:
         return self.raw_data["data"]
 
 
-    async def async_update(self):
-        """Update the server hashrate Statistics data."""
-        resp = await self.auth.get_data("servers/history")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
 
 class Minerdashboard:
     """Class that represents the Miner's dashboard data in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a Minerdashboard object."""
         self.raw_data = raw_data
-        self.auth = auth
         
 
     @property
@@ -183,21 +150,13 @@ class Minerdashboard:
         return self.data["settings"]
 
 
-    async def async_update(self, mineraddress:str):
-        """Update the Miner's dashboard data."""
-        resp = await self.auth.get_data("miner/" + mineraddress + "/dashboard")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
 
 class Minerhistory:
     """Class that represents the Miner's history in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a Minerhistory object."""
         self.raw_data = raw_data
-        self.auth = auth
         
 
     @property
@@ -207,21 +166,12 @@ class Minerhistory:
 
 
 
-    async def async_update(self, mineraddress:str):
-        """Update the Miner's history."""
-        resp = await self.auth.get_data("miner/" + mineraddress + "/history")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
-
 class Payouts:
     """Class that represents the payouts in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a Payouts object."""
         self.raw_data = raw_data
-        self.auth = auth
 
 
     @property
@@ -230,21 +180,13 @@ class Payouts:
         return self.raw_data["data"]
 
 
-    async def async_update(self, mineraddress:str):
-        """Update the payouts data."""
-        resp = await self.auth.get_data("miner/" + mineraddress + "/payouts")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
 
 class Rounds:
     """Class that represents the Rounds in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a Rounds object."""
         self.raw_data = raw_data
-        self.auth = auth
 
 
     @property
@@ -253,21 +195,13 @@ class Rounds:
         return self.raw_data["data"]
 
 
-    async def async_update(self, mineraddress:str):
-        """Update the rounds data."""
-        resp = await self.auth.get_data("miner/" + mineraddress + "/rounds")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
 
 class Settings:
     """Class that represents the settings in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a Settings object."""
         self.raw_data = raw_data
-        self.auth = auth
 
 
     @property
@@ -296,21 +230,13 @@ class Settings:
         return self.data["ip"]
 
 
-    async def async_update(self, mineraddress:str):
-        """Update the rounds data."""
-        resp = await self.auth.get_data("miner/" + mineraddress + "/settings")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
 
 class Minercurrentstatistics:
     """Class that represents the current statistics of the miner in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a MinercurrentStâts object."""
         self.raw_data = raw_data
-        self.auth = auth
 
 
     @property
@@ -389,21 +315,12 @@ class Minercurrentstatistics:
         return self.data["btcPerMin"]    
 
 
-    async def async_update(self, mineraddress:str):
-        """Update the minercurrentStats data."""
-        resp = await self.auth.get_data("miner/" + mineraddress + "/currentStats")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
-
 class Workers:
     """Class that represents the  workers of the miner in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a Workers object."""
         self.raw_data = raw_data
-        self.auth = auth
 
 
     @property
@@ -412,21 +329,13 @@ class Workers:
         return self.raw_data["data"]
 
 
-    async def async_update(self, mineraddress:str):
-        """Update the Workers data."""
-        resp = await self.auth.get_data("miner/" + mineraddress + "/workers")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
 
 class Workerhistory:
     """Class that represents the individual worker history in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a Workerhistory object."""
         self.raw_data = raw_data
-        self.auth = auth
 
 
     @property
@@ -435,20 +344,12 @@ class Workerhistory:
         return self.raw_data["data"]
 
 
-    async def async_update(self, mineraddress:str, worker:str):
-        """Update the Worker's history data."""
-        resp = await self.auth.get_data("miner/" + mineraddress + "/worker/" + worker + "/history")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
-
-
 class Workercurrentstatistics:
     """Class that represents the current statistics of the worker in the ethermine API."""
 
-    def __init__(self, raw_data: dict, auth: Request):
+    def __init__(self, raw_data: dict):
         """Initialize a WorkercurrentStats object."""
         self.raw_data = raw_data
-        self.auth = auth
 
 
     @property
@@ -495,10 +396,3 @@ class Workercurrentstatistics:
     def staleShares(self) -> int:
         """Returns the number of stale shares submitted by the worker during the last hour."""
         return self.data["staleShares"]
-
-
-    async def async_update(self, mineraddress:str, worker:str):
-        """Update the worker's current Statistics data."""
-        resp = await self.auth.get_data("miner/" + mineraddress + "/worker/" + worker + "/currentStats")
-        resp.raise_for_status()
-        self.raw_data = await resp.json()
