@@ -13,7 +13,7 @@ pip install async_ethermine
 import asyncio
 import aiohttp
 
-from async_ethermine import EthermineAPI, Request
+import async_ethermine
 
 async def main():
     async with aiohttp.ClientSession() as session:
