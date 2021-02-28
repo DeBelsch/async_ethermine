@@ -1,4 +1,4 @@
-"""Asynchronous Python client ethermine API."""
+"""Asynchronous Python client for ethermine API."""
 from .ethermine import EthermineAPI, Request
 from .models import *
 
