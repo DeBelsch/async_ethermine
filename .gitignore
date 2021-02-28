@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Visual Studio Code
+.vscode/
+
+#other
+response_formatted.json
+test_complete.py
+test.py
+todo
