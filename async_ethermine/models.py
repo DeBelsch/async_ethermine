@@ -1,6 +1,5 @@
 
 
-
 class Basicpoolstatistics:
     """Class that represents the basic pool Statistics in the ethermine API."""
 

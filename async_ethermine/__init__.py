@@ -1,7 +1,6 @@
 """Asynchronous Python client ethermine API."""
-from .ethermine import EthermineAPI
+from .ethermine import EthermineAPI, Request
 from .models import *
-from .request import Request
 
 __all__ = [
         "EthermineAPI", "Request", "Basicpoolstatistics", "Minedblockshistory", "Networkstatistics", 
